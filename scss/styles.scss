@@ -1,0 +1,328 @@
+// Variables
+$lightGray: #e5e5e5;
+$midGray: #808080;
+$darkGray: #2e2e2e;
+
+$blue: #22a7f0;
+$gray: #353535;
+
+// mixins
+@mixin secHeader {
+  color: $blue;
+  font-family: "Play", sans-serif;
+  &:after {
+    content: "";
+    display: block;
+    width: 50px;
+    padding-top: 10px;
+    border-bottom: 3px solid $blue;
+  }
+}
+
+@mixin secHeaderAr {
+  color: $blue;
+  font-family: "Play", sans-serif;
+  &:after {
+    content: "";
+    display: block;
+    margin-left: auto;
+    width: 50px;
+    padding-top: 10px;
+    border-bottom: 3px solid $blue;
+  }
+}
+// global
+.raleway {
+  font-family: "Raleway", sans-serif;
+}
+.play {
+  font-family: "Play", sans-serif;
+}
+.secmargin {
+  margin-bottom: 70px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+// main header start
+#main-header {
+  .header-contact {
+    border-bottom: 1px solid $lightGray;
+  }
+
+  .langs-btn {
+    border: 1px solid $darkGray;
+    border-radius: 0.25em;
+    background-color: transparent;
+    padding: 0px 10px;
+  }
+  i:hover {
+    color: $blue;
+  }
+
+  .icons {
+    @media(max-width: 992px){
+      display: none;
+    }
+  }
+  p {
+    display: inline;
+
+    @media (max-width: 768px) {
+      display: block;
+      margin-bottom: 1px;
+    }
+    @media (max-width: 576px) {
+      display: none;
+    }
+  }
+  ul {
+    a {
+      font-weight: 500;
+    }
+  }
+  .active {
+    color: $blue;
+    font-weight: bold;
+  }
+  .carousel {
+    position: relative;
+    .fa-angle-left,
+    .fa-angle-right {
+      border: 1px solid white;
+      padding: 5px 13px;
+      font-size: 2em;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  .carousel-text {
+    position: absolute;
+    top: 20vw;
+    left: 25%;
+  }
+  .parag {
+    width: 80%;
+    margin: 0 auto;
+    @media (max-width: 850px) {
+      display: none;
+    }
+  }
+  h1 {
+    @media (max-width: 700px) {
+      font-size: 2em;
+    }
+    @media (max-width: 500px) {
+      display: none;
+    }
+  }
+
+  .btn {
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 8px 30px;
+    border-radius: 0;
+    color: white;
+    display: block;
+    margin: 0 auto;
+    @media (max-width: 600px) {
+      display: none;
+    }
+    &:hover {
+      color: $darkGray;
+      background-color: white;
+    }
+  }
+}
+// main header end
+
+// services start
+#services {
+  .service-item {
+    margin-bottom: 80px;
+    i {
+      font-size: 3em;
+      color: $darkGray;
+      margin-bottom: 15px;
+    }
+    h3 {
+      color: $blue;
+    }
+  }
+}
+// services end
+
+// recent projects start
+#recent-projects {
+  .recent-header {
+    @include secHeader();
+  }
+
+  .recent-header-ar {
+    @include secHeaderAr();
+  }
+  .gallery {
+    .prev,
+    .next {
+      i {
+        background-color: $blue;
+        color: white;
+        padding: 10px;
+        @media (max-width: 768px) {
+          padding: 15px 50px;
+          font-size: 2em;
+        }
+      }
+    }
+    .img {
+      position: relative;
+      margin-bottom: 30px;
+      &:hover {
+        .overlay {
+          opacity: 0.5;
+        }
+        .icon {
+          opacity: 1;
+        }
+      }
+      .overlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $blue;
+        transition: 0.5s ease;
+        opacity: 0;
+      }
+      .icon {
+        position: absolute;
+        top: 40%;
+        left: 43%;
+        font-size: 2em;
+        transition: 0.5s ease;
+        opacity: 0;
+        @media (max-width: 992px) {
+          font-size: 1.5em;
+        }
+        @media (max-width: 768px) {
+          top: 40%;
+          left: 45%;
+          font-size: 3em;
+        }
+      }
+    }
+    .controllers {
+      @media (max-width: 768px) {
+        text-align: center !important;
+      }
+    }
+  }
+}
+// recent projects end
+
+// fun facts start
+#facts {
+  .facts-bg {
+    background-color: $blue;
+    padding: 30px;
+  }
+}
+// fun facts end
+
+// from blog start
+#from-blog {
+  .blog-header {
+    @include secHeader();
+  }
+  .blog-header-ar {
+    @include secHeaderAr();
+  }
+  .gallery {
+    .card-img {
+      height: 100%;
+      object-fit: cover;
+    }
+    .prev,
+    .next {
+      i {
+        background-color: $blue;
+        color: white;
+        padding: 10px;
+        @media (max-width: 992px) {
+          padding: 15px 50px;
+          font-size: 2em;
+        }
+      }
+    }
+    .controllers {
+      @media (max-width: 992px) {
+        text-align: center !important;
+      }
+    }
+  }
+}
+// from blog end
+
+// get in touch start
+#get-in-touch {
+  background-color: $blue;
+
+  .btn {
+    border: 2px solid white;
+    border-radius: 0;
+    padding: 8px 30px;
+  }
+}
+// get in touch end
+
+// footer start
+#main-footer {
+  background-color: $darkGray;
+  h3 {
+    color: $blue;
+  }
+  i {
+    color: $blue;
+  }
+}
+// footer end
+
+/////////////////////////////////////////////// contact page
+
+// tabs start
+#tabs {
+  background-color: $blue;
+}
+//  tabs end
+
+
+// form start
+#form {
+  .form-header {
+    h2 {
+      @include secHeader();
+    }
+  }
+
+  .form-header-ar{
+    @include secHeaderAr();
+  }
+  .form-btn {
+    background-color: $blue;
+    border: none;
+    border-radius: 0.25em;
+    padding: 5px 20px;
+  }
+}
+// form end
+
+// map start
+// #map{
+// }
+// map end
